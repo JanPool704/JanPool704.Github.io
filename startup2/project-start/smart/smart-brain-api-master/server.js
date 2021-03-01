@@ -13,9 +13,9 @@ const db = knex({
   // connect to your own database here
   client: 'pg',
   connection: {
-    host : 'postgresql-tetrahedral-20974',
+  connectionString : process.env.DATABASE_URL,
    ssl: true
-   
+
   }
 });
 db.select('*').from('users').then(data => {
