@@ -14,9 +14,8 @@ const db = knex({
   client: 'pg',
   connection: {
     host : 'postgresql-tetrahedral-20974',
-    user : 'postgres',
-    password : 'Ph2mg5si@5',
-    database : 'smart'
+   ssl: true
+   
   }
 });
 db.select('*').from('users').then(data => {
